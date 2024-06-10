@@ -48,7 +48,7 @@ console.log(arr2Result());
 
 // Fibonacci Series
 
-let number = parseInt(prompt("enter number"));
+// let number = parseInt(prompt("enter number"));
 let n1=0, n2=1, next;
 
 let printFb = () => {
@@ -61,6 +61,28 @@ let printFb = () => {
   }
 }
 
-printFb();
+// printFb();
 
+// Reverse a string
 
+var str = "Reverse me";
+
+//Method 1
+
+let splitstr = str.split("");
+let revsplit = splitstr.reverse();
+let revStr = revsplit.join("");
+
+console.log("Reversed string", revStr);
+
+// Method 2
+
+function getRev (str) {
+  let revStr1 = "";
+  for (let j = str.length - 1; j >= 0; j--){
+    revStr1+= str[j];
+  }
+  return revStr1;
+}
+
+console.log(getRev("Reverse me again"));
