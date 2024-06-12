@@ -119,5 +119,6 @@ createChunk([1,2,3,4,5,6,7,8,9,10,11,12,13,14], 3);
 
 // check if palindrome
 (function palindrome(){
-  
+  let number = 1223221;
+  const result = checkPalindrome(number);
 })()
