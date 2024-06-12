@@ -86,3 +86,33 @@ function getRev (str) {
 }
 
 console.log(getRev("Reverse me again"));
+
+// Get count for duplicate numbers in an array
+
+let arr3 = ['one', 'two', 'three', 'one', 'one', 'two', 'five'];
+
+let count = [];
+
+arr3.forEach(element => {
+  count[element] = (count[element] || 0) + 1;
+})
+
+console.log(count)
+
+// given an array [1,2,3,4,5,6,7,8,9,10,11,12,13,14] create a function which take the paramter as array 
+//and a size and the seperate the array in chunks with the given size.
+
+function createChunk(arr, size){
+  let miniArr = [];
+  let result = [];
+  for(i= 0; i<arr.length ; i++){
+    miniArr.push(i);
+    if(miniArr.length === size || i === arr.length - 1){
+      result.push(miniArr);
+      miniArr = [];
+    }
+  }
+  console.log(result);
+}
+
+createChunk([1,2,3,4,5,6,7,8,9,10,11,12,13,14], 3);
