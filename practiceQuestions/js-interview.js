@@ -96,7 +96,6 @@ let count = [];
 arr3.forEach(element => {
   count[element] = (count[element] || 0) + 1;
 })
-
 console.log(count)
 
 // given an array [1,2,3,4,5,6,7,8,9,10,11,12,13,14] create a function which take the paramter as array 
@@ -114,25 +113,19 @@ function createChunk(arr, size){
   }
   console.log(result);
 }
-
 createChunk([1,2,3,4,5,6,7,8,9,10,11,12,13,14], 3);
 
 // check if palindrome
 (function palindrome(){
   let number = 1223221;
   const result = checkPalindrome(number);
-
- 
 })()
-
 function checkPalindrome(num){
   let initialNum = num;
   let checkNum = 0;
-
   while(num > 0){
     const digit = num % 10;
     checkNum = checkNum * 10 + digit;
     num = Math.floor(num/10);
   }
-
 }
