@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inheritance</title>
+</head>
+
+<body>
+    <script>
+        // Find the duplicate numbers in an array
+        let arr = [1, 2, 3, 4, 4, 5, 3, 2, 7, 8, 9];
+
+        var sorted = arr.filter((x, idx) => {
+            return arr.indexOf(x) !== idx;
+        })
+        console.log(sorted);
+
+        // Find the count of duplicate numbers in an array :
+
+        // function countDuplicate(arr) {
+        //     let counts = {};
+        //     let duplicatecount = 0;
+        //     for (i = 0; i < arr.length; i++) {
+        //         const element = arr[i];
+        //         counts[element] = (counts[element] || 0) + 1;
+        //         if (counts[element] > 1) {
+        //             duplicatecount++;
+        //         }
+        //     }
+        //     return duplicatecount;
+        // }
+        // const numDuplicates = countDuplicate(arr);
+        // console.log("Number of duplicates:", numDuplicates); 
+
+
+// Find the count of duplicate numbers in an array USING REDUCE:
+
+// const countOfDuplicates = arr.reduce((obj, cval)=>{
+//     if(obj[cval]== undefined){
+//         obj[cval] = 1;
+//         return obj;
+//     } else {
+//         obj[cval]++;
+//         return obj;
+//     }
+// },{});
+
+//     console.log(countOfDuplicates);
+        
+// sort numbers in array
+
+// let sortedarray = arr.sort((a,b)=> {
+//     return a-b;
+// })
+
+// console.log(sortedarray);
+
+//find even or odd numbers in array
+
+const result = arr.filter((x)=>{
+    return a % 2 ==0;
+})
+
+
+    </script>
+</body>
+
+</html>
