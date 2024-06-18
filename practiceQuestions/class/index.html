@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classes with properties and methods</title>
+</head>
+<body>
+    <script>
+        class Bicycle {
+            constructor(model, name){
+                this.name = name;
+                this.model = model;
+            }
+
+            Start(){
+                console.log("Name of the bicycle is :", this.name)
+            }
+        }
+
+        xyz = new Bicycle("hero", "top-gear");
+        xyz.Start();
+    </script>
+</body>
+</html>
