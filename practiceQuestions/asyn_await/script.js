@@ -58,20 +58,30 @@ function desc(desg) {
   });
 }
 
-importantAction("Saket")
-  .then((res) => {
-    console.log(res);
-    return likeIt("Mango");
-  })
-  .then((res) => {
-    console.log(res);
-    return desc("student");
-  })
-  .then((res) => {
-    console.log(res);
-  })
-  .catch((err) => {
-    console.log("Error");
-  });
+// importantAction("Saket")
+//   .then((res) => {
+//     console.log(res);
+//     return likeIt("Mango");
+//   })
+//   .then((res) => {
+//     console.log(res);
+//     return desc("student");
+//   })
+//   .then((res) => {
+//     console.log(res);
+//   })
+//   .catch((err) => {
+//     console.log("Error");
+//   });
 
-  console.log("LAst")
+//   console.log("LAst")
+
+//using prmise.all
+
+Promise.all([importantAction("Saket"), likeIt("Mango"), desc("student")]).then((res)=>{
+    console.log(res);
+}).catch((err)=>{
+    console.log("Error", err)
+})
+
+console.log("Last");
