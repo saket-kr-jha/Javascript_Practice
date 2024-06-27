@@ -32,7 +32,101 @@
 
 // promise chaining
 
-console.log("hello");
+// console.log("hello");
+
+// function importantAction(username) {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       resolve(`Hi my name is ${username}`);
+//     }, 1000);
+//   });
+// }
+
+// function likeIt(name) {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       resolve(`I Like ${name}`);
+//     }, 1000);
+//   });
+// }
+
+// function desc(desg) {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       resolve(`My desc is ${desg}`);
+//     }, 1000);
+//   });
+// }
+
+// importantAction("Saket")
+//   .then((res) => {
+//     console.log(res);
+//     return likeIt("Mango");
+//   })
+//   .then((res) => {
+//     console.log(res);
+//     return desc("student");
+//   })
+//   .then((res) => {
+//     console.log(res);
+//   })
+//   .catch((err) => {
+//     console.log("Error");
+//   });
+
+//   console.log("LAst")
+
+//using prmise.all
+
+// Promise.all([importantAction("Saket"), likeIt("Mango"), desc("student")]).then((res)=>{
+//     console.log(res);
+// }).catch((err)=>{
+//     console.log("Error", err)
+// })
+
+// promise.race - return the first promise which gets fulfilled or rejected
+
+// Promise.race([importantAction("Saket"), likeIt("Mango"), desc("student")]).then((res)=>{
+//     console.log(res);
+// }).catch((err)=>{
+//     console.log("Error", err)
+// })
+
+// promise.allsettled - return the failed as well as fulfilled promises
+
+// Promise.allSettled([importantAction("Saket"), likeIt("Mango"), desc("student")]).then((res)=>{
+//     console.log(res);
+// }).catch((err)=>{
+//     console.log("Error", err)
+// })
+
+// promise.any - return the first fullfilled promise and ignore the failed once - returns error when all the prmise fails
+
+// Promise.allSettled([importantAction("Saket"), likeIt("Mango"), desc("student")]).then((res)=>{
+//     console.log(res);
+// }).catch((err)=>{
+//     console.log("Error", err)
+// })
+
+// console.log("Last");
+
+// Interview question 1
+// const firstPromise =  new Promise((resolve, reject)=>{
+//     resolve("First!");
+// });
+
+// const secondPromise =  new Promise((resolve, reject)=>{
+//     resolve(firstPromise);
+// });
+
+// secondPromise.then((res)=>{
+//     console.log(res)
+//     return res;
+// }).then((res)=>{
+//     console.log(res);
+// })
+
+// call promises recursively using a function :
 
 function importantAction(username) {
   return new Promise((resolve, reject) => {
@@ -58,30 +152,19 @@ function desc(desg) {
   });
 }
 
-// importantAction("Saket")
-//   .then((res) => {
-//     console.log(res);
-//     return likeIt("Mango");
-//   })
-//   .then((res) => {
-//     console.log(res);
-//     return desc("student");
-//   })
-//   .then((res) => {
-//     console.log(res);
-//   })
-//   .catch((err) => {
-//     console.log("Error");
-//   });
+function promRecurse(funcPromises) {
+  if (funcPromises.length === 0) return;
+  const currentProm = funcPromises.shift();
 
-//   console.log("LAst")
+  currentProm
+    .then((res) => {
+      console.log(res);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 
-//using prmise.all
+  promRecurse(funcPromises);
+}
 
-Promise.all([importantAction("Saket"), likeIt("Mango"), desc("student")]).then((res)=>{
-    console.log(res);
-}).catch((err)=>{
-    console.log("Error", err)
-})
-
-console.log("Last");
+promRecurse([importantAction("Saket"), likeIt("Mango"), desc("student")]);
