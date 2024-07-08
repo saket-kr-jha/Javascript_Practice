@@ -129,3 +129,4 @@ function checkPalindrome(num){
     num = Math.floor(num/10);
   }
 }
+// new
