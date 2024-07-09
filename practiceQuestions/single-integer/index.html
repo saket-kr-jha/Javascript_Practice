@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 162. find the single integer
+        // Given an array of integers, all integers appear twice except one integer, could you quickly target it ?
+        // const arr = [10, 2, 2 , 1, 0, 0, 10]
+        // findSingle(arr) // 1
+        // What is time & space cost of your approach ? Could you do better ?
+
+        function findSingle(arr){
+            let result = 0;
+            for (const item of arr){
+                result^= item
+            }
+            console.log(result);
+        }
+        const arr = [10, 2, 2 , 1, 0, 0, 10]
+        findSingle(arr) // 1
+
+    </script>
+</body>
+</html>
