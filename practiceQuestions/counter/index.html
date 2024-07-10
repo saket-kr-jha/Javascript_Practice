@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Please create a function count(), when called it should return how many times it has been called, count.reset() should also implemented.
+        // your code here
+        function count() {
+            count.val = count.val || 1;
+            return count.val++
+        }
+
+        count.reset = () => {
+            count.val = 1;
+        }
+
+
+        count() // 1
+        count() // 2
+        count() // 3
+
+        count.reset()
+
+        count() // 1
+        count() // 2
+        count() // 3
+    </script>
+</body>
+
+</html>
