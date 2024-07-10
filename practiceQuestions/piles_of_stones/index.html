@@ -1,11 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    <script></script>
+    <script>
+
+        // There is a pile of n (n > 0) stones.
+        // Player A and Player B take turns to pick 1 or 2 stones from the pile. A starts first.
+        // Who picks the last stone loses the game.
+        // Now here is the question, is there a winning strategy for A or B ? If so, returns the player name. If there is none, return null.
+
+        function canWinStonePicking(n) {
+            if (n === 0) {
+                return "noone";
+            }
+            return n % 3 === 1 ? "B" : "A";
+        }
+
+        console.log(canWinStonePicking(1));
+        console.log(canWinStonePicking(8));
+
+    </script>
 </body>
+
 </html>
